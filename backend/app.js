@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
@@ -9,7 +11,7 @@ const logger = require('./middleware/logger');
 const cors = require('cors');
 
 const PORT = process.env.PORT || 8080;
-
+const MONGODB_URL = process.env.DB_URL;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
@@ -19,8 +21,7 @@ main()
   .then(() => console.log('Database Connected!'))
   .catch((err) => console.log(err));
 async function main() {
-  // await mongoose.connect(MONGODB_URL);
-  await mongoose.connect('mongodb://127.0.0.1:27017/flying_panda');
+  await mongoose.connect(MONGODB_URL);
 }
 
 app.use(
