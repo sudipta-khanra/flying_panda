@@ -10,18 +10,22 @@ View all alerts in a table
 Update alert status (Active → Booked → Expired)
 Delete alerts
 Filter alerts using query params (country, status)
+Input validation with Joi
 Custom logger middleware
 Centralized error handling
 React frontend consuming the backend API
 
 # Tech Stack
 
-Backend
+## Backend
+
 Node.js
 Express
 MongoDB + Mongoose
+Joi for input validation
 CORS middleware
-Frontend
+
+## Frontend
 React (Vite)
 Fetch API
 
@@ -73,6 +77,13 @@ GET /alerts?status=Active
   createdAt: Date
 }
 
+# Joi Schema Validation
+
+Input validation is done using Joi for all create and update requests. This ensures that:
+country and city are non-empty strings
+visaType is one of "Tourist", "Business", or "Student"
+status is one of "Active", "Booked", or "Expired" (default "Active") 
+
 # Design Decisions
 MVC-style structure used for backend (routes, controllers, models) for clarity and scalability.
 MongoDB + Mongoose chosen for flexible schema and fast prototyping.
@@ -84,17 +95,11 @@ Frontend kept simple and functional, focusing on clarity rather than heavy styli
 # What I’d Improve for Production
 
 Add authentication & authorization
-
 Add input validation (Joi / Zod)
-
 Implement pagination for large datasets
-
 Use environment variables for DB URLs and allowed origins
-
 Add API response standardization
-
 Improve UI/UX with better styling and feedback states
-
 Add tests (Jest / Supertest)
 
 
@@ -102,25 +107,16 @@ Add tests (Jest / Supertest)
 ## Where AI Helped
 
 Boilerplate code setup
-
 Reference for Express route structure
-
 Debugging common issues like CORS configuration and middleware ordering
 
 ## Where I Had to Think
 
 Designing the data model and API behavior
-
 Structuring backend routes and controllers
-
 Debugging real issues such as:
-
 CORS preflight (OPTIONS) requests
-
 Empty database states
-
 Middleware execution order
-
 Integrating frontend state updates with backend responses
-
 Ensuring proper HTTP status codes and error handling
