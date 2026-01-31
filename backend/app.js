@@ -9,6 +9,7 @@ const methodOverride = require('method-override');
 const alertRoutes = require('./routes/alerts.js');
 const logger = require('./middleware/logger');
 const cors = require('cors');
+const Joi = require('joi');
 
 const PORT = process.env.PORT || 8080;
 const MONGODB_URL = process.env.DB_URL;
