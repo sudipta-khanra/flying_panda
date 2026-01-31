@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:8080/alerts';
+const BASE_URL = 'https://flying-panda.onrender.com/alerts';
 
 export const getAlerts = async () => {
   const res = await fetch(BASE_URL);
