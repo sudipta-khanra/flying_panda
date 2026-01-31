@@ -84,6 +84,14 @@ country and city are non-empty strings
 visaType is one of "Tourist", "Business", or "Student"
 status is one of "Active", "Booked", or "Expired" (default "Active") 
 
+# Deployment
+
+The application is deployed and accessible online:
+
+Frontend (React): https://flying-panda.vercel.app/
+
+Backend (Express API): https://flying-panda-backend.onrender.com/alerts
+
 # Design Decisions
 MVC-style structure used for backend (routes, controllers, models) for clarity and scalability.
 MongoDB + Mongoose chosen for flexible schema and fast prototyping.
