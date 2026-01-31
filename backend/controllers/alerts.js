@@ -1,4 +1,4 @@
-const Alert = require('../models/Alert');
+const Alert = require('../models/alert.js');
 const ExpressError = require('../utils/ExpressError');
 
 // GET /alerts
